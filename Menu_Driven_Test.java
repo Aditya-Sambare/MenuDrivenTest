@@ -9,7 +9,9 @@ class MenuDriven{
     void menuDrivenDemo() throws IOException {
         boolean flag = true;
         while(flag){
+            System.out.println("-------------------------------------------------------------------------------------------------------------------------");
             System.out.println("Enter 1 to insert record \nEnter 2 to update record \nEnter 3 to remove record \nEnter 4 to fetch all record \nEnter 5 to exit");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
             int operation = Integer.parseInt(bf.readLine());
             switch (operation){
                 case 1://insert
@@ -23,7 +25,7 @@ class MenuDriven{
                     operation1.insert(id,firstName,lastName,city,techStack,mobileNumber);
                     break;
                 case 2://update
-                    System.out.println("Enter id\nFirst name\nLast name\ncity\ntechstack\nmobile number");
+                    System.out.println("Enter id for which you want to update record and then enter updated \nFirst name\nLast name\ncity\ntechstack\nmobile number");
                     int id1 = Integer.parseInt(bf.readLine());
                     String firstName1 = bf.readLine();
                     String lastName1 = bf.readLine();
@@ -34,7 +36,7 @@ class MenuDriven{
                     break;
                 case 3://remove
                     System.out.println("enter the id to delete the record");
-                    int idTORemove = bf.read();
+                    int idTORemove = Integer.parseInt(bf.readLine());
                     operation1.removeRecord(idTORemove);
                     break;
                 case 4://fetch all
